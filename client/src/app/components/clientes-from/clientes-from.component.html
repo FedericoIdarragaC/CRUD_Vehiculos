@@ -1,0 +1,26 @@
+
+  <div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{Edit ? 'Actualizar cliente':'Guardar cliente'}}</h5>
+              <span class="d-inline-block p-2"><span class="font-weight-bold">Cedula: </span> <input type="text" [(ngModel)]="cliente.Cedula" id="Cedula" placeholder="Cedula" > </span>
+              <span class="d-inline-block p-2"><span class="font-weight-bold">Nombre: </span> <input type="text" [(ngModel)]="cliente.Nombre" id="Nombre" placeholder="Nombre" > </span>
+              <span class="d-inline-block p-2"><span class="font-weight-bold">Fecha de nacimiento: </span> <input type="date" [(ngModel)]="cliente.Fecha_nac" id="Fecha" placeholder="Fecha de nacimiento" > </span>
+              <button type="button" (click)="Edit ? actualizarCliente():guardarCliente()" class="btn btn-success ">Guardar</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+          <div class="card-body">
+              <span class="d-inline-block p-2"><span class="font-weight-bold">Cedula: </span>{{cliente.Cedula}}</span><br>
+              <span class="d-inline-block p-2"><span class="font-weight-bold">Nombre: </span>{{cliente.Nombre}}</span><br>
+              <span class="d-inline-block p-2"><span class="font-weight-bold">Fecha de nacimiento: </span>{{cliente.Fecha_nac | date:'dd/MM/yyyy'}}</span><br>
+            
+          </div>
+      </div>
+    </div>
+    
+</div>
+

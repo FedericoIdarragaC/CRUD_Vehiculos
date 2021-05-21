@@ -1,0 +1,31 @@
+<div id="alerta" class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Server: </strong> {{TextAlert}}
+    <button class="close" >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <button class="btn btn-success m-2" [routerLink]="['/vehiculos/clientes/añadir']" routerLinkActive="router-link-active" >Añadir cliente</button>
+  <table class="table table-striped">
+      
+      <thead>
+        <tr>
+          <th scope="col">Cedula</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Fecha de nacimiento</th>
+          <th scope="col">Vehiculos comprados</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let cliente of clientes">
+        <tr>
+          <th scope="row">{{cliente.Cedula}}</th>
+          <td>{{cliente.Nombre}}</td>
+          <td>{{cliente.Fecha_nac | date:'dd/MM/yyyy'}}</td>
+          <td><select class="form-control" id="exampleFormControlSelect1"  >
+            <option *ngFor="let vehiculo of cliente.vehiculos">Id: {{vehiculo.Id_vehiculo}} | Modelo: {{vehiculo.Nombre_m}}</option>
+          </select></td>
+          <td><button [routerLink]="['/vehiculos/clientes/edit',cliente.Cedula]" routerLinkActive="router-link-active" ><i class="far fa-edit"></i></button></td>
+          <td><button (click)="eliminar(cliente.Cedula)"><i class="far fa-trash-alt"></i></button></td>
+        </tr>
+      </tbody>
+    </table>
+  

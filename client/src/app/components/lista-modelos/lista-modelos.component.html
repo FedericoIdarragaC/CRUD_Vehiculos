@@ -1,0 +1,30 @@
+  <div id="alerta" class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Server: </strong> {{TextAlert}}
+    <button  class="close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <button class="btn btn-success m-2" [routerLink]="['/vehiculos/modelos/añadir']" routerLinkActive="router-link-active" >Añadir modelo</button>
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Id #</th>
+          <th scope="col">Modelo</th>
+          <th scope="col">Cilindraje</th>
+          <th scope="col">Torque</th>
+          <th scope="col">Caballos</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let modelo of modelos">
+        <tr>
+          <th scope="row">{{modelo.Id_modelo}}</th>
+          <td>{{modelo.Nombre_m}}</td>
+          <td>{{modelo.Cilindraje}} CC</td>
+          <td>{{modelo.Torque}} N/m</td>
+          <td>{{modelo.Caballos}} HP</td>
+          <td><button [routerLink]="['/vehiculos/modelos/edit',modelo.Id_modelo]" routerLinkActive="router-link-active" ><i class="far fa-edit" ></i></button></td>
+          <td><button (click)="Eliminar(modelo.Id_modelo)"><i class="far fa-trash-alt"></i></button></td>
+        </tr>
+      </tbody>
+    </table>
+  

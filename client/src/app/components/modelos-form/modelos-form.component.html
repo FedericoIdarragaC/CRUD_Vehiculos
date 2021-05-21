@@ -1,0 +1,30 @@
+
+  <div class="row">
+      <div class="col-sm-6">
+          <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{{Edit ? 'Actualizar modelo':'Guardar modelo'}}</h5>
+                <span class="d-inline-block p-2"><span class="font-weight-bold">Nombre: </span> <input type="text" [(ngModel)]="modelo_g.Nombre_m" id="Nombre" placeholder="Nombre" > </span>
+                <span class="d-inline-block p-2"><span class="font-weight-bold">Cilindraje: </span> <input type="text" [(ngModel)]="modelo_g.Cilindraje" id="Cilindraje" placeholder="Cilindraje" > </span>
+                <span class="d-inline-block p-2"><span class="font-weight-bold">Torque: </span> <input type="text" [(ngModel)]="modelo_g.Torque" id="Torque" placeholder="Torque" > </span>
+                <span class="d-inline-block p-2"><span class="font-weight-bold">Caballos: </span> <input type="text" [(ngModel)]="modelo_g.Caballos" id="Caballos" placeholder="Torque" > </span>
+                <br>
+                <button type="button" (click)="Edit ? actualizarModelo():guardarModelo()" class="btn btn-success ">Guardar</button>
+              </div>
+          </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <span class="d-inline-block p-2"><span class="font-weight-bold">Id: </span>{{modelo_g.Id_modelo}}</span><br>
+                <span class="d-inline-block p-2"><span class="font-weight-bold">Nombre: </span>{{modelo_g.Nombre_m}}</span><br>
+                <span class="d-inline-block p-2"><span class="font-weight-bold">Cilindraje: </span>{{modelo_g.Cilindraje}}</span><br>
+                <span class="d-inline-block p-2"><span class="font-weight-bold">Torque: </span>{{modelo_g.Torque}}</span><br>
+                <span class="d-inline-block p-2"><span class="font-weight-bold">Caballos: </span>{{modelo_g.Caballos}}</span><br>
+                
+            </div>
+        </div>
+      </div>
+      
+  </div>
+  

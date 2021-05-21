@@ -1,0 +1,29 @@
+<div id="alerta" class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Server: </strong> {{TextAlert}}
+  <button  class="close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<button class="btn btn-success m-2" [routerLink]="['/vehiculos/añadir']" routerLinkActive="router-link-active" >Añadir vehiculo</button>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id #</th>
+        <th scope="col">Modelo</th>
+        <th scope="col">Cliente</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Cilindraje</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let vehiculo of vehiculos">
+      <tr>
+        <th scope="row">{{vehiculo.Id_vehiculo}}</th>
+        <td>{{vehiculo.Nombre_m}}</td>
+        <td>{{vehiculo.Nombre}}</td>
+        <td>{{vehiculo.Precio}}</td>
+        <td>{{vehiculo.Cilindraje}}</td>
+        <td><button [routerLink]="['/vehiculos/edit',vehiculo.Id_vehiculo]" routerLinkActive="router-link-active" ><i class="far fa-edit" ></i></button></td>
+        <td><button (click)="Eliminar(vehiculo.Id_vehiculo)"><i class="far fa-trash-alt"></i></button></td>
+      </tr>
+    </tbody>
+  </table>
